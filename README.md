@@ -107,10 +107,12 @@ the navigation APIs do not.
 
 ## Why the existing guidance doesn't cover this case
 
-Prior discussion ([amannn/next-intl#1791](https://github.com/amannn/next-intl/issues/1791))
-recommended dropping the `locale` prop and letting
-middleware rewrite `/en/...` → `/...` while keeping the locale cookie in sync.
-That doesn't apply here:
+The [docs for `Link` + `locale`](https://next-intl.dev/docs/routing/navigation#link-locale)
+and the discussion in
+[amannn/next-intl#1791](https://github.com/amannn/next-intl/issues/1791)
+both recommend dropping the `locale` prop and letting middleware rewrite
+`/en/...` → `/...` while keeping the locale cookie in sync. That doesn't
+apply here:
 
 - `output: 'export'` — no middleware runs.
 - The prefixed default-locale path (`/en/about`) is not in the export at all.
