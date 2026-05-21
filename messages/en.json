@@ -1,0 +1,15 @@
+{
+  "Index": {
+    "title": "Home",
+    "about": "About"
+  },
+  "About": {
+    "title": "About",
+    "home": "Home"
+  },
+  "LocaleSwitcher": {
+    "label": "Switch locale",
+    "en": "English",
+    "sv-se": "Svenska"
+  }
+}

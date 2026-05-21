@@ -1,0 +1,15 @@
+{
+  "Index": {
+    "title": "Hem",
+    "about": "Om"
+  },
+  "About": {
+    "title": "Om",
+    "home": "Hem"
+  },
+  "LocaleSwitcher": {
+    "label": "Byt språk",
+    "en": "Engelska",
+    "sv-se": "Svenska"
+  }
+}
