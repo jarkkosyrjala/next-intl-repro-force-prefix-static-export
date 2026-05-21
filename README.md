@@ -6,6 +6,8 @@ Minimal reproduction:
 to the default locale via `Link`/`useRouter` produces a prefixed URL that
 does not exist in the export, with no userland opt-out.**
 
+**Live demo:** <https://jarkkosyrjala.github.io/next-intl-repro-force-prefix-static-export/> — open the Swedish about page (`/sv-se/about/`) and click the "English" locale switcher. You'll land on a Pages 404 because the link points to `/en/about/`, which is not in the export.
+
 ## Versions
 
 - `next` 16.2.6
@@ -92,9 +94,8 @@ href="/sv-se/about/"
 Expected `href="/about/"`. The same shows on `out/about/index.html`, where the
 EN self-link is `href="/en/about/"` instead of `href="/about/"`.
 
-A live demo is deployed to GitHub Pages via the workflow in
-[`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml); click the
-"English" locale link on the Swedish about page and you'll get a Pages 404.
+The [live demo](https://jarkkosyrjala.github.io/next-intl-repro-force-prefix-static-export/)
+is deployed via [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml).
 
 ## Root cause
 
