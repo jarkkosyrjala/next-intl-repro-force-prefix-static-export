@@ -101,11 +101,13 @@ A live demo is deployed to GitHub Pages via the workflow in
 `<Link locale="...">` and `useRouter().push/replace/prefetch` force
 `forcePrefix: true` internally whenever `locale` is set, with no way to
 override from userland. `redirect()` exposes `forcePrefix` since 4.1.0
-(PR #1865); the navigation APIs do not.
+([PR amannn/next-intl#1865](https://github.com/amannn/next-intl/pull/1865));
+the navigation APIs do not.
 
 ## Why the existing guidance doesn't cover this case
 
-Prior discussion (#1791) recommended dropping the `locale` prop and letting
+Prior discussion ([amannn/next-intl#1791](https://github.com/amannn/next-intl/issues/1791))
+recommended dropping the `locale` prop and letting
 middleware rewrite `/en/...` → `/...` while keeping the locale cookie in sync.
 That doesn't apply here:
 
@@ -118,7 +120,7 @@ locale-switch navigation.
 
 ## Proposed fix
 
-Mirror the `redirect()` change for `Link` and
-`useRouter().push/replace/prefetch` — accept an opt-in `forcePrefix` so
-`<Link href="/about" locale="en" forcePrefix={false}>` renders
-`<a href="/about">`.
+Mirror the [`redirect()` change](https://github.com/amannn/next-intl/pull/1865)
+for `Link` and `useRouter().push/replace/prefetch` — accept an opt-in
+`forcePrefix` so `<Link href="/about" locale="en" forcePrefix={false}>`
+renders `<a href="/about">`.
